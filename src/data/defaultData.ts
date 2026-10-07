@@ -1,0 +1,227 @@
+import {
+  SchoolConfig,
+  User,
+  KelasItem,
+  MapelItem,
+  Siswa,
+  AbsensiRecord,
+  NilaiRecord,
+  AgendaRecord,
+  BimbinganRecord,
+  JadwalMengajarItem,
+} from '../types';
+
+export const initialConfig: SchoolConfig = {
+  namaSekolah: 'SMA NEGERI 1 PRESTASI NUSANTARA',
+  npsn: '20230491',
+  jenjang: 'SMA',
+  alamat: 'Jl. Pendidikan Karakter No. 45, Kompleks Ki Hajar Dewantara',
+  kelurahanDesa: 'Cimanggu',
+  kecamatan: 'Tanah Sereal',
+  kabupatenKota: 'Kota Bogor',
+  provinsi: 'Jawa Barat',
+  kodePos: '16161',
+  noTelp: '(0251) 8332190',
+  email: 'info@sman1prestasunusantara.sch.id',
+  website: 'https://sman1prestasinusantara.sch.id',
+  namaKepsek: 'Dr. H. Bambang Sudirman, M.Pd.',
+  nipKepsek: '19680512 199303 1 004',
+  tahunAjaran: '2025/2026',
+  semester: 'Genap',
+  logoKiriUrl: 'https://api.iconify.design/emojione:school.svg',
+  logoKananUrl: 'https://api.iconify.design/openmoji:graduation-cap.svg',
+  gasApiUrl: '',
+};
+
+export const initialUsers: User[] = [
+  {
+    id: 'USR-001',
+    username: 'admin',
+    password: 'admin123',
+    nama: 'Administrator Utama',
+    nip: '19820415 200801 1 012',
+    role: 'admin',
+    mapelAjar: 'Teknologi Informasi & Komputer',
+    waliKelas: '-',
+    status: 'Aktif',
+  },
+  {
+    id: 'USR-002',
+    username: 'budi',
+    password: 'guru123',
+    nama: 'Budi Santoso, S.Pd.',
+    nip: '19790812 200501 1 008',
+    role: 'guru',
+    mapelAjar: 'Matematika Wajib',
+    waliKelas: 'X-MIPA-1',
+    status: 'Aktif',
+  },
+  {
+    id: 'USR-003',
+    username: 'siti',
+    password: 'guru123',
+    nama: 'Dra. Hj. Siti Rahmawati, M.Pd.',
+    nip: '19740320 199802 2 003',
+    role: 'guru',
+    mapelAjar: 'Bahasa Indonesia',
+    waliKelas: 'XI-MIPA-2',
+    status: 'Aktif',
+  },
+  {
+    id: 'USR-004',
+    username: 'ahmad',
+    password: 'guru123',
+    nama: 'Ahmad Fauzi, S.Pd., M.Si.',
+    nip: '19851104 201001 1 015',
+    role: 'guru',
+    mapelAjar: 'Fisika',
+    waliKelas: 'XII-MIPA-1',
+    status: 'Aktif',
+  },
+];
+
+export const initialKelas: KelasItem[] = [
+  { id: 'KLS-01', nama: 'X-MIPA-1', waliKelas: 'Budi Santoso, S.Pd.', tingkat: 'X', jurusan: 'MIPA' },
+  { id: 'KLS-02', nama: 'X-MIPA-2', waliKelas: 'Dra. Hj. Siti Rahmawati, M.Pd.', tingkat: 'X', jurusan: 'MIPA' },
+  { id: 'KLS-03', nama: 'XI-MIPA-1', waliKelas: 'Ahmad Fauzi, S.Pd., M.Si.', tingkat: 'XI', jurusan: 'MIPA' },
+  { id: 'KLS-04', nama: 'XI-IPS-1', waliKelas: 'Dra. Hj. Siti Rahmawati, M.Pd.', tingkat: 'XI', jurusan: 'IPS' },
+  { id: 'KLS-05', nama: 'XII-MIPA-1', waliKelas: 'Ahmad Fauzi, S.Pd., M.Si.', tingkat: 'XII', jurusan: 'MIPA' },
+];
+
+export const initialMapel: MapelItem[] = [
+  { id: 'MP-01', kode: 'MTK-W', nama: 'Matematika Wajib', kkm: 75, kelompok: 'Umum' },
+  { id: 'MP-02', kode: 'BIN-W', nama: 'Bahasa Indonesia', kkm: 75, kelompok: 'Umum' },
+  { id: 'MP-03', kode: 'FSK-P', nama: 'Fisika', kkm: 75, kelompok: 'Peminatan MIPA' },
+  { id: 'MP-04', kode: 'KIM-P', nama: 'Kimia', kkm: 75, kelompok: 'Peminatan MIPA' },
+  { id: 'MP-05', kode: 'BIG-W', nama: 'Bahasa Inggris', kkm: 75, kelompok: 'Umum' },
+  { id: 'MP-06', kode: 'PAI-W', nama: 'Pendidikan Agama & Budi Pekerti', kkm: 78, kelompok: 'Umum' },
+];
+
+export const initialSiswa: Siswa[] = [
+  { nis: '23241001', nisn: '0062819281', nama: 'Aditya Pratama Putra', kelas: 'X-MIPA-1', jenisKelamin: 'L', agama: 'Islam', noHp: '081234567890', status: 'Aktif' },
+  { nis: '23241002', nisn: '0062819282', nama: 'Anisa Dwi Lestari', kelas: 'X-MIPA-1', jenisKelamin: 'P', agama: 'Islam', noHp: '081234567891', status: 'Aktif' },
+  { nis: '23241003', nisn: '0062819283', nama: 'Bagaskara Wahyu', kelas: 'X-MIPA-1', jenisKelamin: 'L', agama: 'Kristen', noHp: '081234567892', status: 'Aktif' },
+  { nis: '23241004', nisn: '0062819284', nama: 'Citra Kirana Melati', kelas: 'X-MIPA-1', jenisKelamin: 'P', agama: 'Islam', noHp: '081234567893', status: 'Aktif' },
+  { nis: '23241005', nisn: '0062819285', nama: 'Daffa Rizky Ramadhan', kelas: 'X-MIPA-1', jenisKelamin: 'L', agama: 'Islam', noHp: '081234567894', status: 'Aktif' },
+  { nis: '23241006', nisn: '0062819286', nama: 'Eka Nur Fadhilah', kelas: 'X-MIPA-1', jenisKelamin: 'P', agama: 'Islam', noHp: '081234567895', status: 'Aktif' },
+  { nis: '23241007', nisn: '0062819287', nama: 'Farhan Maulana Hakim', kelas: 'X-MIPA-1', jenisKelamin: 'L', agama: 'Islam', noHp: '081234567896', status: 'Aktif' },
+  { nis: '23241008', nisn: '0062819288', nama: 'Gita Maharani', kelas: 'X-MIPA-1', jenisKelamin: 'P', agama: 'Hindu', noHp: '081234567897', status: 'Aktif' },
+  { nis: '22231011', nisn: '0051829101', nama: 'Hilman Syahputra', kelas: 'XI-MIPA-1', jenisKelamin: 'L', agama: 'Islam', noHp: '081234567898', status: 'Aktif' },
+  { nis: '22231012', nisn: '0051829102', nama: 'Intan Permata Sari', kelas: 'XI-MIPA-1', jenisKelamin: 'P', agama: 'Islam', noHp: '081234567899', status: 'Aktif' },
+  { nis: '21221021', nisn: '0041829201', nama: 'Jonathan Samuel', kelas: 'XII-MIPA-1', jenisKelamin: 'L', agama: 'Kristen', noHp: '081234567800', status: 'Aktif' },
+  { nis: '21221022', nisn: '0041829202', nama: 'Kania Dewi Anggraini', kelas: 'XII-MIPA-1', jenisKelamin: 'P', agama: 'Islam', noHp: '081234567801', status: 'Aktif' },
+];
+
+export const initialAbsensi: AbsensiRecord[] = [
+  {
+    id: 'ABS-20260401-01',
+    tanggal: '2026-04-01',
+    kelas: 'X-MIPA-1',
+    mapel: 'Matematika Wajib',
+    guruNip: '19790812 200501 1 008',
+    guruNama: 'Budi Santoso, S.Pd.',
+    detail: [
+      { nis: '23241001', nama: 'Aditya Pratama Putra', status: 'H' },
+      { nis: '23241002', nama: 'Anisa Dwi Lestari', status: 'H' },
+      { nis: '23241003', nama: 'Bagaskara Wahyu', status: 'S', keterangan: 'Demam' },
+      { nis: '23241004', nama: 'Citra Kirana Melati', status: 'H' },
+      { nis: '23241005', nama: 'Daffa Rizky Ramadhan', status: 'I', keterangan: 'Acara Keluarga' },
+      { nis: '23241006', nama: 'Eka Nur Fadhilah', status: 'H' },
+      { nis: '23241007', nama: 'Farhan Maulana Hakim', status: 'H' },
+      { nis: '23241008', nama: 'Gita Maharani', status: 'H' },
+    ],
+  },
+  {
+    id: 'ABS-20260402-01',
+    tanggal: '2026-04-02',
+    kelas: 'X-MIPA-1',
+    mapel: 'Bahasa Indonesia',
+    guruNip: '19740320 199802 2 003',
+    guruNama: 'Dra. Hj. Siti Rahmawati, M.Pd.',
+    detail: [
+      { nis: '23241001', nama: 'Aditya Pratama Putra', status: 'H' },
+      { nis: '23241002', nama: 'Anisa Dwi Lestari', status: 'H' },
+      { nis: '23241003', nama: 'Bagaskara Wahyu', status: 'H' },
+      { nis: '23241004', nama: 'Citra Kirana Melati', status: 'H' },
+      { nis: '23241005', nama: 'Daffa Rizky Ramadhan', status: 'H' },
+      { nis: '23241006', nama: 'Eka Nur Fadhilah', status: 'H' },
+      { nis: '23241007', nama: 'Farhan Maulana Hakim', status: 'A', keterangan: 'Tanpa Keterangan' },
+      { nis: '23241008', nama: 'Gita Maharani', status: 'H' },
+    ],
+  },
+];
+
+export const initialNilai: NilaiRecord[] = [
+  { id: 'NIL-01', nis: '23241001', namaSiswa: 'Aditya Pratama Putra', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', tp1: 85, tp2: 88, tp3: 84, uts: 86, uas: 90, nilaiAkhir: 87, predikat: 'A' },
+  { id: 'NIL-02', nis: '23241002', namaSiswa: 'Anisa Dwi Lestari', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', tp1: 90, tp2: 92, tp3: 95, uts: 91, uas: 94, nilaiAkhir: 93, predikat: 'A' },
+  { id: 'NIL-03', nis: '23241003', namaSiswa: 'Bagaskara Wahyu', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', tp1: 76, tp2: 78, tp3: 80, uts: 75, uas: 79, nilaiAkhir: 78, predikat: 'B' },
+  { id: 'NIL-04', nis: '23241004', namaSiswa: 'Citra Kirana Melati', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', tp1: 82, tp2: 85, tp3: 86, uts: 84, uas: 88, nilaiAkhir: 85, predikat: 'A' },
+  { id: 'NIL-05', nis: '23241005', namaSiswa: 'Daffa Rizky Ramadhan', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', tp1: 70, tp2: 74, tp3: 75, uts: 72, uas: 76, nilaiAkhir: 74, predikat: 'C' },
+  { id: 'NIL-06', nis: '23241006', namaSiswa: 'Eka Nur Fadhilah', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', tp1: 88, tp2: 90, tp3: 89, uts: 88, uas: 91, nilaiAkhir: 89, predikat: 'A' },
+  { id: 'NIL-07', nis: '23241007', namaSiswa: 'Farhan Maulana Hakim', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', tp1: 78, tp2: 80, tp3: 82, uts: 79, uas: 81, nilaiAkhir: 80, predikat: 'B' },
+  { id: 'NIL-08', nis: '23241008', namaSiswa: 'Gita Maharani', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', tp1: 84, tp2: 86, tp3: 85, uts: 85, uas: 87, nilaiAkhir: 86, predikat: 'A' },
+];
+
+export const initialAgenda: AgendaRecord[] = [
+  {
+    id: 'AGN-01',
+    tanggal: '2026-04-01',
+    jamKe: '1 - 2 (07.15 - 08.45)',
+    kelas: 'X-MIPA-1',
+    mapel: 'Matematika Wajib',
+    guruNip: '19790812 200501 1 008',
+    guruNama: 'Budi Santoso, S.Pd.',
+    materiPokok: 'Trigonometri: Sudut Istimewa dan Kuadran',
+    kegiatanPembelajaran: 'Diskusi kelompok penemuan rumus relasi sudut kuadran I-IV dengan LKPD interaktif.',
+    kendalaCatatan: 'Dua siswa perlu penguatan konsep segitiga siku-siku dasar.',
+    absensiRingkasan: 'Hadir: 6, Sakit: 1, Izin: 1, Alpa: 0',
+  },
+  {
+    id: 'AGN-02',
+    tanggal: '2026-04-02',
+    jamKe: '3 - 4 (08.45 - 10.15)',
+    kelas: 'X-MIPA-1',
+    mapel: 'Bahasa Indonesia',
+    guruNip: '19740320 199802 2 003',
+    guruNama: 'Dra. Hj. Siti Rahmawati, M.Pd.',
+    materiPokok: 'Teks Negosiasi: Struktur dan Kaidah Kebahasaan',
+    kegiatanPembelajaran: 'Role-play simulasi perundingan bisnis sederhana antar kelompok siswa.',
+    kendalaCatatan: 'Siswa sangat antusias dan percaya diri dalam menyampaikan argumen.',
+    absensiRingkasan: 'Hadir: 7, Sakit: 0, Izin: 0, Alpa: 1',
+  },
+];
+
+export const initialBimbingan: BimbinganRecord[] = [
+  {
+    id: 'BMB-01',
+    tanggal: '2026-03-25',
+    nis: '23241005',
+    namaSiswa: 'Daffa Rizky Ramadhan',
+    kelas: 'X-MIPA-1',
+    guruWali: 'Budi Santoso, S.Pd.',
+    permasalahan: 'Sering terlambat masuk jam pertama dan nilai tugas menurun drastis pada 2 minggu terakhir.',
+    tindakLanjut: 'Konseling individual, membuat jadwal rutinitas bangun pagi bersama orang tua, bimbingan berkala mingguan.',
+    statusPenanganan: 'Proses',
+  },
+  {
+    id: 'BMB-02',
+    tanggal: '2026-03-28',
+    nis: '23241007',
+    namaSiswa: 'Farhan Maulana Hakim',
+    kelas: 'X-MIPA-1',
+    guruWali: 'Budi Santoso, S.Pd.',
+    permasalahan: 'Terindikasi tidak masuk sekolah tanpa keterangan (Alpa) selama 2 hari berturut-turut.',
+    tindakLanjut: 'Panggilan telepon ke orang tua, pemberian teguran lisan, komitmen kehadiran tertulis bermaterai.',
+    statusPenanganan: 'Selesai',
+  },
+];
+
+export const initialJadwal: JadwalMengajarItem[] = [
+  { id: 'JDW-01', hari: 'Senin', jamKe: '1 - 2', waktu: '07.15 - 08.45', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', guruNip: '19790812 200501 1 008', guruNama: 'Budi Santoso, S.Pd.', ruang: 'R. 101' },
+  { id: 'JDW-02', hari: 'Senin', jamKe: '3 - 4', waktu: '08.45 - 10.15', kelas: 'X-MIPA-2', mapel: 'Matematika Wajib', guruNip: '19790812 200501 1 008', guruNama: 'Budi Santoso, S.Pd.', ruang: 'R. 102' },
+  { id: 'JDW-03', hari: 'Selasa', jamKe: '1 - 2', waktu: '07.15 - 08.45', kelas: 'XI-MIPA-1', mapel: 'Fisika', guruNip: '19851104 201001 1 015', guruNama: 'Ahmad Fauzi, S.Pd., M.Si.', ruang: 'Lab Fisika' },
+  { id: 'JDW-04', hari: 'Selasa', jamKe: '3 - 4', waktu: '08.45 - 10.15', kelas: 'X-MIPA-1', mapel: 'Bahasa Indonesia', guruNip: '19740320 199802 2 003', guruNama: 'Dra. Hj. Siti Rahmawati, M.Pd.', ruang: 'R. 101' },
+  { id: 'JDW-05', hari: 'Rabu', jamKe: '5 - 6', waktu: '10.30 - 12.00', kelas: 'X-MIPA-1', mapel: 'Matematika Wajib', guruNip: '19790812 200501 1 008', guruNama: 'Budi Santoso, S.Pd.', ruang: 'R. 101' },
+  { id: 'JDW-06', hari: 'Kamis', jamKe: '1 - 2', waktu: '07.15 - 08.45', kelas: 'XII-MIPA-1', mapel: 'Fisika', guruNip: '19851104 201001 1 015', guruNama: 'Ahmad Fauzi, S.Pd., M.Si.', ruang: 'R. 301' },
+  { id: 'JDW-07', hari: 'Jumat', jamKe: '1 - 2', waktu: '07.15 - 08.35', kelas: 'XI-MIPA-1', mapel: 'Bahasa Indonesia', guruNip: '19740320 199802 2 003', guruNama: 'Dra. Hj. Siti Rahmawati, M.Pd.', ruang: 'R. 201' },
+];

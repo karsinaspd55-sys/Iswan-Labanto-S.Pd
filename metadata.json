@@ -1,0 +1,6 @@
+{
+  "name": "Sistem Administrasi Guru",
+  "description": "Sistem Administrasi Guru terpadu arsitektur Google Apps Script & Blogger XML REST API lengkap dengan Cetak PDF, Barcode, dan Live Studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
